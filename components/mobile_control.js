@@ -269,14 +269,14 @@ class MobileControlMini extends HTMLElement {
                     </div>
                     <div class="mobile-control-wrapper__grid-nav-wrapper">
                         ${(() => {
-                            let markup = ``;
-                            for (const [index, tab] of this.THRID_PANEL_TABS.entries()) {
-                                markup += this.TEMPLATE_TAB(tab[0], tab[1], {
-                                    classes: index == this.active ? "mobile-control-wrapper__grid-nav_active" : "",
-                                });
-                            }
-                            return markup;
-                        })()}
+                let markup = ``;
+                for (const [index, tab] of this.THRID_PANEL_TABS.entries()) {
+                    markup += this.TEMPLATE_TAB(tab[0], tab[1], {
+                        classes: index == this.active ? "mobile-control-wrapper__grid-nav_active" : "",
+                    });
+                }
+                return markup;
+            })()}
                     </div>
                 </div>
 

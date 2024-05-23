@@ -2,7 +2,7 @@ class DrawStrategy {
     constructor(container) {
         this.container = container;
     }
-    drawPages() {}
+    drawPages() { }
     drawFromTo(from, to, activePage) {
         const pivotElement = this.getPivot();
         for (let index = from; index <= to; index++) {
@@ -322,7 +322,7 @@ class Paginator extends HTMLElement {
         this.currentPage = 1;
         this.numberOfPages = 1;
         this.paginationRender = new PaginatorRenderer(this, this.numberOfPages);
-        this.callback = () => {};
+        this.callback = () => { };
         this.prevRenderCall = null;
     }
     connectedCallback() {

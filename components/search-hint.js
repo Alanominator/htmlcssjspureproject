@@ -130,12 +130,12 @@ class SearchHint extends HTMLElement {
         <div class="search-hint__wrapper">
             <div class="search-hint">
                 ${this.matchData()
-                    .map(row => {
-                        const value = this.inputToAutoFill.value;
-                        const [matchPart, otherPart] = this.divideOnParts(row, value);
-                        return `<span class="search-hint__row" value="${row}"><span class="search-hint__match-highlight">${matchPart}</span>${otherPart}</span>`;
-                    })
-                    .join("")}
+                .map(row => {
+                    const value = this.inputToAutoFill.value;
+                    const [matchPart, otherPart] = this.divideOnParts(row, value);
+                    return `<span class="search-hint__row" value="${row}"><span class="search-hint__match-highlight">${matchPart}</span>${otherPart}</span>`;
+                })
+                .join("")}
             </div>
         </div>
         `;

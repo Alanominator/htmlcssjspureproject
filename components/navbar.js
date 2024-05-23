@@ -301,16 +301,16 @@ class Navbar extends HTMLElement {
                 </div>
                 <div class="third-panel journals panels__panel">
                     ${(() => {
-                        let markup = "";
-                        for (const tab of this.THRID_PANEL_TABS.slice(0, 8)) {
-                            if (tab[0] == "вакансии объед") {
-                                markup += this.THIRD_PANEL_TAB_TEMPLATE(tab[0], tab[1], { tabNameClasses: "no-white" });
-                                continue;
-                            }
-                            markup += this.THIRD_PANEL_TAB_TEMPLATE(tab[0], tab[1]);
-                        }
-                        return markup;
-                    })()}
+                let markup = "";
+                for (const tab of this.THRID_PANEL_TABS.slice(0, 8)) {
+                    if (tab[0] == "вакансии объед") {
+                        markup += this.THIRD_PANEL_TAB_TEMPLATE(tab[0], tab[1], { tabNameClasses: "no-white" });
+                        continue;
+                    }
+                    markup += this.THIRD_PANEL_TAB_TEMPLATE(tab[0], tab[1]);
+                }
+                return markup;
+            })()}
                     <div class="third-panel__tab more">
                         <p class="third-panel__tab-text">
                             <span style="width: 100%; text-align: center; position: static;">Все 22</span>
@@ -318,15 +318,15 @@ class Navbar extends HTMLElement {
                     </div>
                     <div class="other-tabs">
                         ${(() => {
-                            let markup = "";
-                            for (const [index, tab] of this.THRID_PANEL_TABS.slice(8).entries()) {
-                                if (index == 8) {
-                                    markup += `<div class="third-panel__tab more"></div>`;
-                                }
-                                markup += this.THIRD_PANEL_TAB_TEMPLATE(tab[0], tab[1]);
-                            }
-                            return markup;
-                        })()}
+                let markup = "";
+                for (const [index, tab] of this.THRID_PANEL_TABS.slice(8).entries()) {
+                    if (index == 8) {
+                        markup += `<div class="third-panel__tab more"></div>`;
+                    }
+                    markup += this.THIRD_PANEL_TAB_TEMPLATE(tab[0], tab[1]);
+                }
+                return markup;
+            })()}
                     </div>
                 </div>
             </div>

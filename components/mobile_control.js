@@ -322,7 +322,7 @@ class MobileControlMini extends HTMLElement {
                             </div>
                             <div class="mobile-control-wrapper__grid-control-wrapper more">
                                 <span class="icon"></span>
-                                <p>Ключи.Пароли</p>
+                                <p>Ключи. Пароли</p>
                             </div>
                             <div class="mobile-control-wrapper__grid-control-wrapper more">
                                 <span class="icon"></span>

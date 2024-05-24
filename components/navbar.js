@@ -67,9 +67,12 @@ class Navbar extends HTMLElement {
                     box-sizing: border-box;
                     font-size: 18px;
                     text-transform: capitalize;
+                    min-width: 0;
                 }
                 .second-panel__tab > p {
                     font-size: inherit;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
                 .second-panel .tab > span.icon {
                     font-size: 35px;
@@ -92,6 +95,9 @@ class Navbar extends HTMLElement {
                     padding: 25px 10px 20px 10px;
                     background-color: var(--blue);
                     align-items: start;
+                    padding: 0;
+                    padding-top: 25px;
+                    padding-bottom: 20px;
                 }
                 
                 .third-panel__tab {
@@ -108,6 +114,7 @@ class Navbar extends HTMLElement {
                     font-size: 18px;
                     cursor: pointer;
                     overflow: hidden;
+                    min-width: 0;
                 }
                 .third-panel__tab_active{
                     color: var(--yellow);
@@ -260,6 +267,58 @@ class Navbar extends HTMLElement {
                         font-size: 16px;
                     }
                 }
+
+                
+                .showMore {
+                    height: 100%;
+                }
+                .showMore__content {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .showMore__content span {
+                    position: static !important;
+                }
+                @media (width <= 880px) {
+                    .loginTopPanel {
+                        display: none;
+                    }
+                }
+
+                @media (width > 880px) {
+                    .loginTopPanel {
+                        padding: 10px 0;
+                        background: #414141;
+                        color: white;
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                    .loginTopPanel .login {
+                        min-width: 11.1%;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+                    
+                    .loginTopPanel .login .icon {
+                        display: block;
+                        color: inherit;
+                        font-size: 30px;
+                        font-weight: 400;
+                        padding-left: 4px;
+                        padding-right: 5px;
+                    }
+    
+                    
+                    .loginTopPanel .login .login__text {
+                        font-weight: bold;
+                    }
+                }
+
+                
             </style>
         `;
         this.innerHTML = /*html*/ `
@@ -269,6 +328,14 @@ class Navbar extends HTMLElement {
                 <span class="icon burger"></span>
             </div>
             <div id="navbar">
+                <div class="loginTopPanel">
+                    <div class="login">
+                        <span class="icon"></span>
+                        <span class="login__text">
+                            Войти
+                        </span>
+                    </div>
+                </div>
                 <div class="panels__panel second-panel ">
                     <div class="tab second-panel__tab" id="interface_tab">
                         <p>Интерфейс</p>
@@ -293,7 +360,7 @@ class Navbar extends HTMLElement {
                         <p>Email ящики</p>
                     </div>
                     <div class="tab second-panel__tab">
-                        <p>Ключи.Пароли</p>
+                        <p>Ключи. Пароли</p>
                     </div>
                     <div class="tab second-panel__tab">
                         <p>Разное</p>
@@ -311,10 +378,18 @@ class Navbar extends HTMLElement {
                 }
                 return markup;
             })()}
-                    <div class="third-panel__tab more">
-                        <p class="third-panel__tab-text">
-                            <span style="width: 100%; text-align: center; position: static;">Все 22</span>
-                            <br> журнала <span class="icon reversed" style="padding-left: 5px;"></span></p>
+                    <div class="third-panel__tab more showMore">
+                        <p class="third-panel__tab-text showMore__content">
+                            <span style="width: 100%; text-align: center; position: static;">
+                                Все 21
+                            </span>
+                            <span>
+                                журнала
+                            </span>
+                            <span class="icon reversed" style="padding-left: 5px;">
+                                
+                            </span>
+                        </p>
                     </div>
                     <div class="other-tabs">
                         ${(() => {
